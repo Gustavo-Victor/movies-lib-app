@@ -5,9 +5,19 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #cecece; 
+    font-family: Helvetica, sans-serif;
+    background-color: #000; 
+    color: #fff;
+}
 
+a {
+    text-decoration: none;
+    color: #f7d354; 
+    transition: .5s; 
+}
+
+a:hover {
+    color: #b8930c; 
 }
 
 
