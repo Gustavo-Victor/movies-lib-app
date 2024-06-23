@@ -7,15 +7,15 @@ export default function Header() {
   return (
     <div id="header">
       <nav id="navbar">
-        <h2><NavLink to="/"><BiCameraMovie/> MoviesLib</NavLink></h2>
-        <form action="#">
+        <h2 id="logo"><NavLink to="/"><BiCameraMovie/> MoviesLib</NavLink></h2>
+        <form id="search-form" action="#">
           <input 
             type="search" 
             name="search" 
             id="search" 
             placeholder="Search for a movie..."
              />
-          <button type="submit">
+          <button className="btn" type="submit">
             <BiSearchAlt2 />
           </button>
         </form>

@@ -1,0 +1,55 @@
+.movie-card {
+    width: 30%;
+    color: #fff; 
+    margin-bottom: 2rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 1rem; 
+}
+
+.movie-card .movie-img {
+    max-width: 100%;
+}
+
+.movie-card .movie-title { 
+    font-size: 1.2rem; 
+}
+
+.movie-card .movie-img,
+.movie-card .movie-average, 
+.movie-card .movie-title {
+    margin-bottom: 0.8rem; 
+}
+
+.movie-card .movie-average svg {
+    color: #f7d354; 
+    margin-right: 0.4rem; 
+}
+
+.movie-card .movie-link {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem; 
+    padding: 1rem 0.5rem; 
+}
+
+.movie-card .movie-link:hover, 
+.movie-card .movie-link:active {
+    color: #f7d354; 
+    background-color: transparent;    
+}
+
+
+@media only screen and (max-width: 680px) {
+    .movie-card { 
+        min-width: 48%; 
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .movie-card {
+        width: 100%; 
+    }
+}

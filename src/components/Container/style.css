@@ -1,0 +1,9 @@
+.wrapper {
+    padding: 5rem 0 2rem 0; 
+}
+
+@media only screen and (max-width: 450px) {
+    .wrapper {
+        padding-top: 7rem;
+    }
+}
