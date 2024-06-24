@@ -1,0 +1,10 @@
+#footer {
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0e0d0d;
+    align-items: center;
+    gap: 1rem; 
+    /* border-top: 1px solid #f7d354; */
+}

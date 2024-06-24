@@ -4,7 +4,7 @@ export interface IMovie {
     original_language: string;     
     overview: string; 
     poster_path: string; 
-    backdrop_path: string;
+    backdrop_path?: string;
     release_date: string;  
     popularity: number; 
     video: boolean; 
@@ -13,4 +13,11 @@ export interface IMovie {
     adult?: boolean; 
     original_title?: string;
     genre_ids?: number[]; 
+}
+
+export interface IMovieDetails extends IMovie {
+    budget: number; 
+    revenue: number; 
+    runtime: number; 
+    tagline: string;
 }

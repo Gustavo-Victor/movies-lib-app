@@ -1,40 +1,18 @@
-// import { useFetchData } from "../../hooks/useFetchData"
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import { useFetchMovies } from "../../hooks/useFetchMovies";
 import { useSearchParams } from "react-router-dom";
 import MovieCard from "../../components/MovieCard";
-import { IMovie } from "../../interfaces/Movie";
 import "./style.css";
+// import { IMovie } from "../../interfaces/Movie";
 const moviesSearchURL = String(import.meta.env.VITE_SEARCH);
-//const apiKey = String(import.meta.env.VITE_API_KEY);
 const token = String(import.meta.env.VITE_API_TOKEN);
+//const apiKey = String(import.meta.env.VITE_API_KEY);
 
 
 export default function Search() {
-  const [movies, setMovies] = useState<IMovie[]>([])
   const [search] = useSearchParams();
-  const [loading, setLoading] = useState(true);
   const searchText = search.get("q");
-  // const customUrl = `${searchUrl}?api_key=${apiKey}&query=${searchText}`
-  // const { data: movies, loading } = useFetchData(customUrl); 
-
-  const getMoviesBySearch = async (url: string) => {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${token}`
-      }
-    });
-
-    const data = await response.json();
-    setMovies(data.results);
-    setLoading(false);
-  }
-
-  useEffect(() => {
-    const customUrl = `${moviesSearchURL}?query=${searchText}`;
-    getMoviesBySearch(customUrl);
-  }, [searchText]);
+  const { data: movies, loading } = useFetchMovies(moviesSearchURL, searchText, token); 
 
   if (loading) {
     return <p>Loading...</p>;

@@ -1,26 +1,15 @@
-import { useState, useEffect } from "react";
-import { IMovie } from "../../interfaces/Movie";
+// import { useState, useEffect } from "react";
+// import { IMovie } from "../../interfaces/Movie";
 import MovieCard from "../../components/MovieCard";
+import { useFetchMovies } from "../../hooks/useFetchMovies";
 const moviesURL = String(import.meta.env.VITE_API);
-const apiKey = String(import.meta.env.VITE_API_KEY);
+//const apiKey = String(import.meta.env.VITE_API_KEY);
+const token = String(import.meta.env.VITE_API_TOKEN);
 import "./style.css";
 
 
 export default function Home() {
-  const [topMovies, setTopMovies] = useState<IMovie[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const getTopRatedMovies = async (url: string) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setTopMovies(data.results);
-  }
-
-  useEffect(() => {
-    const topRatedUrl = `${moviesURL}top_rated?api_key=${apiKey}`;
-    getTopRatedMovies(topRatedUrl);
-    setLoading(false);
-  }, []);
+  const { data: topMovies, loading } = useFetchMovies(moviesURL + "top_rated", null, token); 
 
   if (loading) {
     return <p>Loading...</p>

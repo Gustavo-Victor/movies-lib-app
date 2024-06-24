@@ -1,0 +1,14 @@
+.no-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 350px;
+    background-color: #313131;
+    margin-bottom: 0.8rem; 
+}
+
+/* .no-image-container img {
+    width: 100px;
+    height: 100px;
+} */
